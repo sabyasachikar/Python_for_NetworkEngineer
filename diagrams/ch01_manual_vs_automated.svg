@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="680" viewBox="0 0 1040 680" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e8b7f"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1040" height="680" fill="#ffffff"/>
+  <text x="520" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#1f3b57">Manual vs Python Automated Network Operations</text>
+  <text x="520" y="62" text-anchor="middle" font-size="14" fill="#6b7280">The same task, done by hand and done once in code</text>
+
+  <!-- LEFT PANEL: Manual -->
+  <rect x="40" y="90" width="440" height="540" rx="8" fill="#fbfbfc" stroke="#e2e5ea" stroke-width="1.5"/>
+  <rect x="40" y="90" width="440" height="46" rx="8" fill="#c0504d"/>
+  <rect x="40" y="120" width="440" height="16" fill="#c0504d"/>
+  <text x="260" y="120" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Manual CLI Operations</text>
+
+  <g font-size="14" fill="#2b2b2b">
+    <rect x="70" y="160" width="300" height="40" rx="6" fill="#ffffff" stroke="#d8dce2"/>
+    <text x="86" y="185">1. SSH into the device</text>
+    <rect x="70" y="212" width="300" height="40" rx="6" fill="#ffffff" stroke="#d8dce2"/>
+    <text x="86" y="237">2. Type the show command</text>
+    <rect x="70" y="264" width="300" height="40" rx="6" fill="#ffffff" stroke="#d8dce2"/>
+    <text x="86" y="289">3. Read the output with your eyes</text>
+    <rect x="70" y="316" width="300" height="40" rx="6" fill="#ffffff" stroke="#d8dce2"/>
+    <text x="86" y="341">4. Copy findings into a notepad</text>
+    <rect x="70" y="368" width="300" height="40" rx="6" fill="#ffffff" stroke="#d8dce2"/>
+    <text x="86" y="393">5. Repeat for the next device</text>
+  </g>
+
+  <!-- loop arrow -->
+  <path d="M 390 388 C 440 388 440 180 396 180" fill="none" stroke="#c0504d" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="452" y="288" text-anchor="middle" font-size="12" fill="#c0504d" transform="rotate(90 452 288)">repeat for every device</text>
+
+  <rect x="70" y="440" width="380" height="150" rx="6" fill="#fbeceb" stroke="#e6b3af"/>
+  <text x="90" y="468" font-size="14" font-weight="700" fill="#a23b38">What goes wrong</text>
+  <g font-size="13" fill="#7f2c2a">
+    <text x="90" y="493">50 devices means 50 times the work.</text>
+    <text x="90" y="515">One typo can cause an outage.</text>
+    <text x="90" y="537">Results depend on who did the check.</text>
+    <text x="90" y="559">No record of what was seen or when.</text>
+    <text x="90" y="581">It does not scale past a handful of devices.</text>
+  </g>
+
+  <!-- RIGHT PANEL: Automated -->
+  <rect x="560" y="90" width="440" height="540" rx="8" fill="#fbfbfc" stroke="#e2e5ea" stroke-width="1.5"/>
+  <rect x="560" y="90" width="440" height="46" rx="8" fill="#2e8b7f"/>
+  <rect x="560" y="120" width="440" height="16" fill="#2e8b7f"/>
+  <text x="780" y="120" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Python Automated Operations</text>
+
+  <rect x="650" y="162" width="260" height="46" rx="6" fill="#ffffff" stroke="#bcd9d3"/>
+  <text x="780" y="190" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3b57">Run audit.py once</text>
+
+  <!-- fan out to devices -->
+  <line x1="780" y1="208" x2="640" y2="266" stroke="#2e8b7f" stroke-width="2" marker-end="url(#arrowTeal)"/>
+  <line x1="780" y1="208" x2="720" y2="266" stroke="#2e8b7f" stroke-width="2" marker-end="url(#arrowTeal)"/>
+  <line x1="780" y1="208" x2="800" y2="266" stroke="#2e8b7f" stroke-width="2" marker-end="url(#arrowTeal)"/>
+  <line x1="780" y1="208" x2="880" y2="266" stroke="#2e8b7f" stroke-width="2" marker-end="url(#arrowTeal)"/>
+
+  <g font-size="12" fill="#1f3b57">
+    <rect x="600" y="270" width="70" height="34" rx="5" fill="#eaf3f1" stroke="#bcd9d3"/>
+    <text x="635" y="292" text-anchor="middle">R1</text>
+    <rect x="686" y="270" width="70" height="34" rx="5" fill="#eaf3f1" stroke="#bcd9d3"/>
+    <text x="721" y="292" text-anchor="middle">R2</text>
+    <rect x="772" y="270" width="70" height="34" rx="5" fill="#eaf3f1" stroke="#bcd9d3"/>
+    <text x="807" y="292" text-anchor="middle">R3</text>
+    <rect x="858" y="270" width="82" height="34" rx="5" fill="#eaf3f1" stroke="#bcd9d3"/>
+    <text x="899" y="292" text-anchor="middle">R4 ... R50</text>
+  </g>
+
+  <line x1="780" y1="304" x2="780" y2="344" stroke="#2e8b7f" stroke-width="2" marker-end="url(#arrowTeal)"/>
+  <rect x="640" y="346" width="280" height="46" rx="6" fill="#ffffff" stroke="#bcd9d3"/>
+  <text x="780" y="374" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3b57">Collect and check every output</text>
+
+  <line x1="780" y1="392" x2="780" y2="424" stroke="#2e8b7f" stroke-width="2" marker-end="url(#arrowTeal)"/>
+  <rect x="640" y="426" width="280" height="46" rx="6" fill="#ffffff" stroke="#bcd9d3"/>
+  <text x="780" y="454" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3b57">Structured results and a report</text>
+
+  <rect x="590" y="492" width="380" height="98" rx="6" fill="#e9f5f2" stroke="#a9d3ca"/>
+  <text x="610" y="518" font-size="14" font-weight="700" fill="#1f6b5f">Why this wins</text>
+  <g font-size="13" fill="#1f6b5f">
+    <text x="610" y="542">The same steps run the same way every time.</text>
+    <text x="610" y="562">Fifty devices checked in seconds, not hours.</text>
+    <text x="610" y="582">Every run is repeatable, logged, and auditable.</text>
+  </g>
+</svg>

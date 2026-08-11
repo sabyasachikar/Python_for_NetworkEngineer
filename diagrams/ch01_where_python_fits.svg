@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e75b6"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e8b7f"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1040" height="560" fill="#ffffff"/>
+  <text x="520" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#1f3b57">Where Python Fits in Network Work</text>
+  <text x="520" y="64" text-anchor="middle" font-size="14" fill="#6b7280">You write the logic. Python handles the connection, the data, and the decision.</text>
+
+  <!-- Row 1: outbound -->
+  <text x="60" y="112" font-size="13" font-weight="700" fill="#2e75b6">SEND A REQUEST</text>
+
+  <rect x="60" y="128" width="180" height="70" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="150" y="160" text-anchor="middle" font-size="15" font-weight="600" fill="#1f3b57">Network</text>
+  <text x="150" y="180" text-anchor="middle" font-size="15" font-weight="600" fill="#1f3b57">Engineer</text>
+
+  <line x1="240" y1="163" x2="292" y2="163" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <rect x="296" y="128" width="180" height="70" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="386" y="153" text-anchor="middle" font-size="15" font-weight="600" fill="#1f3b57">Python logic</text>
+  <text x="386" y="173" text-anchor="middle" font-size="12" fill="#5b6b7b">your script and rules</text>
+  <text x="386" y="189" text-anchor="middle" font-size="12" fill="#5b6b7b">"what do I want to know"</text>
+
+  <line x1="476" y1="163" x2="528" y2="163" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <rect x="532" y="128" width="200" height="70" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="632" y="153" text-anchor="middle" font-size="15" font-weight="600" fill="#1f3b57">Connection layer</text>
+  <text x="632" y="173" text-anchor="middle" font-size="12" fill="#5b6b7b">SSH, NETCONF, RESTCONF,</text>
+  <text x="632" y="189" text-anchor="middle" font-size="12" fill="#5b6b7b">REST API, gNMI</text>
+
+  <line x1="732" y1="163" x2="784" y2="163" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <rect x="788" y="128" width="190" height="70" rx="8" fill="#1f3b57"/>
+  <text x="883" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Network devices</text>
+  <text x="883" y="180" text-anchor="middle" font-size="12" fill="#cbd6e2">routers, switches, firewalls</text>
+
+  <!-- turn down -->
+  <path d="M 883 198 L 883 236" fill="none" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#ag)"/>
+
+  <!-- Row 2: inbound -->
+  <text x="60" y="286" font-size="13" font-weight="700" fill="#2e8b7f">GET AN ANSWER BACK</text>
+
+  <rect x="788" y="252" width="190" height="60" rx="8" fill="#e9f5f2" stroke="#a9d3ca"/>
+  <text x="883" y="278" text-anchor="middle" font-size="14" font-weight="600" fill="#1f6b5f">Raw output</text>
+  <text x="883" y="297" text-anchor="middle" font-size="12" fill="#3f7d72">text or JSON or XML</text>
+
+  <line x1="788" y1="282" x2="736" y2="282" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#ag)"/>
+
+  <rect x="556" y="252" width="180" height="60" rx="8" fill="#e9f5f2" stroke="#a9d3ca"/>
+  <text x="646" y="278" text-anchor="middle" font-size="14" font-weight="600" fill="#1f6b5f">Parser</text>
+  <text x="646" y="297" text-anchor="middle" font-size="12" fill="#3f7d72">turn text into data</text>
+
+  <line x1="556" y1="282" x2="504" y2="282" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#ag)"/>
+
+  <rect x="324" y="252" width="180" height="60" rx="8" fill="#e9f5f2" stroke="#a9d3ca"/>
+  <text x="414" y="278" text-anchor="middle" font-size="14" font-weight="600" fill="#1f6b5f">Structured data</text>
+  <text x="414" y="297" text-anchor="middle" font-size="12" fill="#3f7d72">lists and dictionaries</text>
+
+  <line x1="324" y1="282" x2="272" y2="282" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#ag)"/>
+
+  <rect x="92" y="252" width="180" height="60" rx="8" fill="#e9f5f2" stroke="#a9d3ca"/>
+  <text x="182" y="278" text-anchor="middle" font-size="14" font-weight="600" fill="#1f6b5f">Decision</text>
+  <text x="182" y="297" text-anchor="middle" font-size="12" fill="#3f7d72">pass or fail, act or wait</text>
+
+  <!-- down to outputs -->
+  <path d="M 182 312 L 182 356" fill="none" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#ag)"/>
+
+  <rect x="92" y="360" width="180" height="54" rx="8" fill="#ffffff" stroke="#c9ced6"/>
+  <text x="182" y="392" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3b57">Report</text>
+
+  <path d="M 182 414 C 182 452 360 452 360 452" fill="none" stroke="#2e8b7f" stroke-width="2.5"/>
+  <path d="M 272 387 C 330 387 340 420 358 448" fill="none" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#ag)"/>
+  <rect x="300" y="360" width="180" height="54" rx="8" fill="#ffffff" stroke="#c9ced6"/>
+  <text x="390" y="392" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3b57">Alert</text>
+
+  <rect x="508" y="360" width="200" height="54" rx="8" fill="#ffffff" stroke="#c9ced6"/>
+  <text x="608" y="392" text-anchor="middle" font-size="14" font-weight="600" fill="#1f3b57">Save or backup</text>
+  <path d="M 272 400 C 380 430 470 400 506 390" fill="none" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#ag)"/>
+
+  <rect x="92" y="452" width="886" height="70" rx="8" fill="#f4f7fb" stroke="#dbe3ee"/>
+  <text x="112" y="480" font-size="14" font-weight="700" fill="#1f3b57">The pattern to remember</text>
+  <text x="112" y="504" font-size="13" fill="#42506a">Every automation task is two halves: a connection that reaches the device, and logic that decides what to do with what comes back. This course teaches both, one at a time.</text>
+</svg>

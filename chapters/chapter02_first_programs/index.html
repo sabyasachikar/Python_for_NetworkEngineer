@@ -1,0 +1,1335 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From Python Fundamentals to Real-World Network Automation">
+      
+      
+        <meta name="author" content="sabyasachikar">
+      
+      
+        <link rel="canonical" href="https://sabyasachikar.github.io/Python_for_NetworkEngineer/chapters/chapter02_first_programs/">
+      
+      
+        <link rel="prev" href="../chapter01_why_python/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Chapter 2: Your First Python Programs - Python for Network Engineers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-your-first-python-programs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python for Network Engineers" class="md-header__button md-logo" aria-label="Python for Network Engineers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python for Network Engineers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2: Your First Python Programs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sabyasachikar/Python_for_NetworkEngineer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sabyasachikar/Python_for_NetworkEngineer
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python for Network Engineers" class="md-nav__button md-logo" aria-label="Python for Network Engineers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python for Network Engineers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sabyasachikar/Python_for_NetworkEngineer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sabyasachikar/Python_for_NetworkEngineer
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Python Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Python Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter00_prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 0: Prerequisites and Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01_why_python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Why Python for Network Engineers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Your First Python Programs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Your First Python Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters-to-a-network-engineer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters to a network engineer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-work-through-this-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to work through this chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#showing-text-with-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Showing text with print
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-everyday-value-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four everyday value types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doing-a-little-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doing a little math
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-between-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Converting between types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-input-from-the-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting input from the user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-strings-putting-values-into-text-neatly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f-strings: putting values into text neatly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-walkthrough-a-device-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code walkthrough: a device summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-files-for-this-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository files for this chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters-to-a-network-engineer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters to a network engineer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-work-through-this-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to work through this chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#showing-text-with-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Showing text with print
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-everyday-value-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four everyday value types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doing-a-little-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doing a little math
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-between-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Converting between types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-input-from-the-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting input from the user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-strings-putting-values-into-text-neatly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f-strings: putting values into text neatly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-walkthrough-a-device-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code walkthrough: a device summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-files-for-this-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository files for this chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-2-your-first-python-programs">Chapter 2: Your First Python Programs<a class="headerlink" href="#chapter-2-your-first-python-programs" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Part 1: Python Foundations for Network Engineers</strong>
+This is where you actually start writing Python. It assumes you have never
+programmed before. We begin with one line, <code>print</code>, and add one small idea at a
+time: comments, variables, text, numbers, true or false values, and how to turn
+one into another. Every example uses network data you already understand.</p>
+</blockquote>
+<h2 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<p>After this chapter you will be able to:</p>
+<ul>
+<li>Show text on the screen with <code>print</code>.</li>
+<li>Write comments to leave notes in your code.</li>
+<li>Store a value in a variable and use it later.</li>
+<li>Tell apart the four everyday value types: strings, integers, floats, and booleans.</li>
+<li>Convert between text and numbers, and explain why that is necessary.</li>
+<li>Ask the user for input.</li>
+<li>Combine variables and text neatly with f-strings.</li>
+</ul>
+<h2 id="why-this-matters-to-a-network-engineer">Why this matters to a network engineer<a class="headerlink" href="#why-this-matters-to-a-network-engineer" title="Permanent link">&para;</a></h2>
+<p>Everything you automate later is built from these small pieces. When a script
+connects to a router, the hostname it uses is stored in a variable. When it reads a
+port number from a file, that value arrives as text and has to be turned into a
+number before you can do math with it. When it prints a report, it uses f-strings to
+drop values into neat lines. None of this is advanced, but all of it shows up in
+every real tool. Get comfortable here and the rest of the course is much easier.</p>
+<h2 id="how-to-work-through-this-chapter">How to work through this chapter<a class="headerlink" href="#how-to-work-through-this-chapter" title="Permanent link">&para;</a></h2>
+<p>Keep two things open: an IPython shell to try single lines, and VS Code to write
+scripts you save and run. When you see a block like the one below, it is an IPython
+session. <code>In [1]:</code> is what you type. <code>Out[1]:</code> is what Python shows back.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>In [1]: 2 + 2
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Out[1]: 4
+</code></pre></div>
+<p>Type the examples yourself. Reading them is not the same as running them.</p>
+<h2 id="showing-text-with-print">Showing text with print<a class="headerlink" href="#showing-text-with-print" title="Permanent link">&para;</a></h2>
+<p>The simplest useful thing a program can do is show something on the screen. In
+Python that is the <code>print</code> instruction. Put what you want to show inside the
+parentheses.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>In [1]: print(&quot;Hello from your first Python program&quot;)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Hello from your first Python program
+</code></pre></div>
+<p>Notice there is no <code>Out[]</code> line here. <code>print</code> shows text as a side effect, it does
+not hand a value back. You can print more than one line by calling <code>print</code> more than
+once. Save this as a file called <code>hello.py</code> and run it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from your first Python program&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are about to automate your network&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Run it from your terminal (with your virtual environment active) using <code>python
+hello.py</code>. You get:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Hello from your first Python program
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>You are about to automate your network
+</code></pre></div>
+<p>That is a complete program. Two instructions, run top to bottom.</p>
+<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
+<p>A comment is a note for humans that Python ignores. Anything after a <code>#</code> on a line is
+a comment. Use comments to explain why something is there, not to repeat what the
+code obviously does.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Print a banner before the audit starts</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting the interface audit&quot;</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Best practice:</strong> Good comments explain intent. A comment like <code># add 1 to x</code> is
+noise. A comment like <code># skip the management interface, we never touch it</code> earns
+its place.</p>
+</blockquote>
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>Typing the same value over and over is a waste, and it makes changes painful. A
+variable lets you store a value under a name you choose, then use that name wherever
+you need the value. You create one with a single equals sign: the name on the left,
+the value on the right.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>In [1]: hostname = &quot;core-sw-01&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>In [2]: print(hostname)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>core-sw-01
+</code></pre></div>
+<p>After that first line, writing <code>hostname</code> anywhere is the same as writing
+<code>"core-sw-01"</code>. If the device is renamed, you change one line instead of hunting
+through the whole program.</p>
+<p><img alt="Figure 2.1: A variable is a name that points to a value" src="../../diagrams/ch02_variables_boxes.svg" /></p>
+<p><em>Figure 2.1: A variable is a name you invent on the left and a value Python stores on
+the right. Later, using the name gives you back the value.</em></p>
+<p>A few rules for names. Use lowercase letters and underscores, like <code>vlan_id</code> or
+<code>mgmt_ip</code>. Names can contain letters, numbers, and underscores, but cannot start
+with a number and cannot contain spaces. Pick names that say what the value is.
+<code>router_ip</code> is better than <code>x</code>.</p>
+<blockquote>
+<p><strong>Best practice:</strong> A good variable name is a small gift to the next person who
+reads your code, which is often you, three months later. <code>bgp_neighbor</code> beats <code>bn</code>.</p>
+</blockquote>
+<h2 id="the-four-everyday-value-types">The four everyday value types<a class="headerlink" href="#the-four-everyday-value-types" title="Permanent link">&para;</a></h2>
+<p>Early on, almost every value you store is one of four types. You do not declare the
+type, Python works it out from how you write the value.</p>
+<p><img alt="Figure 2.2: The four everyday value types" src="../../diagrams/ch02_value_types.svg" /></p>
+<p><em>Figure 2.2: Strings, integers, floats, and booleans, with how to recognize each and
+a network example of each.</em></p>
+<p>A string is text. You write it inside quotes, single or double, it does not matter as
+long as they match. Device names, interface names, and yes, IP addresses, are all
+text.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>In [1]: hostname = &quot;core-sw-01&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>In [2]: interface = &quot;GigabitEthernet0/1&quot;
+</code></pre></div>
+<p>An integer is a whole number, written with no quotes and no decimal point. VLAN IDs
+and AS numbers are integers.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>In [3]: vlan_id = 10
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>In [4]: asn = 65001
+</code></pre></div>
+<p>A float is a number with a decimal point. Link speeds or utilization percentages are
+often floats.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>In [5]: uplink_gbps = 10.0
+</code></pre></div>
+<p>A boolean is a yes or no value, written as <code>True</code> or <code>False</code> with a capital first
+letter. It answers a question: is this interface up, is this device reachable.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>In [6]: is_reachable = True
+</code></pre></div>
+<p>You can ask Python what type a value is with <code>type</code>. This is handy when you are not
+sure.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>In [7]: type(&quot;core-sw-01&quot;)
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Out[7]: &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>In [8]: type(10)
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Out[8]: &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>In [9]: type(10.0)
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Out[9]: &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>In [10]: type(True)
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Out[10]: &lt;class &#39;bool&#39;&gt;
+</code></pre></div>
+<p>The quotes are the key tell. <code>"10"</code> is text. <code>10</code> is a number. They look almost the
+same to you, but Python treats them very differently, as you are about to see.</p>
+<h2 id="doing-a-little-math">Doing a little math<a class="headerlink" href="#doing-a-little-math" title="Permanent link">&para;</a></h2>
+<p>Numbers behave the way you expect. The usual symbols are <code>+</code>, <code>-</code>, <code>*</code> for multiply,
+and <code>/</code> for divide.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>In [1]: access_ports = 24
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>In [2]: uplink_ports = 2
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>In [3]: access_ports + uplink_ports
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Out[3]: 26
+</code></pre></div>
+<p>Text does not add like numbers. Putting a <code>+</code> between two strings joins them end to
+end, which is occasionally useful but often a trap.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>In [4]: &quot;Gig&quot; + &quot;0/1&quot;
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Out[4]: &#39;Gig0/1&#39;
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>In [5]: &quot;24&quot; + &quot;2&quot;
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Out[5]: &#39;242&#39;
+</code></pre></div>
+<p>Look at <code>In [5]</code> carefully. <code>"24"</code> and <code>"2"</code> are text, so <code>+</code> glued them into
+<code>"242"</code>, not <code>26</code>. This is the single most common beginner surprise, and it matters a
+lot in network work, because values that come from files, forms, and device output
+almost always arrive as text.</p>
+<h2 id="converting-between-types">Converting between types<a class="headerlink" href="#converting-between-types" title="Permanent link">&para;</a></h2>
+<p>To move between text and numbers you use conversion functions: <code>int()</code> makes a whole
+number, <code>float()</code> makes a decimal, and <code>str()</code> makes text.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>In [1]: int(&quot;22&quot;)
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Out[1]: 22
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>In [2]: int(&quot;22&quot;) + 1
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Out[2]: 23
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>In [3]: str(22)
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>Out[3]: &#39;22&#39;
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>In [4]: &quot;port &quot; + str(22)
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>Out[4]: &#39;port 22&#39;
+</code></pre></div>
+<p>So the rule is simple. If a number arrived as text and you need to do math, convert
+it with <code>int()</code> or <code>float()</code> first. If you have a number and you want to build a
+message, convert it to text with <code>str()</code>, or better, use an f-string, which does the
+conversion for you.</p>
+<blockquote>
+<p><strong>Warning:</strong> <code>int("Gig0/1")</code> fails, because that text is not a number. Only convert
+text that really is a number. You will learn to handle failures safely in the error
+handling chapter.</p>
+</blockquote>
+<h2 id="getting-input-from-the-user">Getting input from the user<a class="headerlink" href="#getting-input-from-the-user" title="Permanent link">&para;</a></h2>
+<p>Sometimes you want to ask the person running the script for a value. The <code>input</code>
+instruction shows a prompt and hands back whatever they type, always as text.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">hostname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the device hostname: &quot;</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You entered: &quot;</span> <span class="o">+</span> <span class="n">hostname</span><span class="p">)</span>
+</code></pre></div>
+<p>Because <code>input</code> always returns text, a number typed by the user is text until you
+convert it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">vlan_text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the VLAN ID: &quot;</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">vlan_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">vlan_text</span><span class="p">)</span>          <span class="c1"># turn the text into a real number</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;VLAN </span><span class="si">{</span><span class="n">vlan_id</span><span class="si">}</span><span class="s2"> will be created&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="f-strings-putting-values-into-text-neatly">f-strings: putting values into text neatly<a class="headerlink" href="#f-strings-putting-values-into-text-neatly" title="Permanent link">&para;</a></h2>
+<p>Joining text and values with <code>+</code> and <code>str()</code> gets clumsy fast. An f-string is the
+clean way. Put the letter <code>f</code> right before the opening quote, then write your text
+and drop any variable inside curly braces.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>In [1]: hostname = &quot;core-sw-01&quot;
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>In [2]: vlan_count = 12
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>In [3]: f&quot;{hostname} carries {vlan_count} VLANs&quot;
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Out[3]: &#39;core-sw-01 carries 12 VLANs&#39;
+</code></pre></div>
+<p>Python replaces <code>{hostname}</code> with the value of <code>hostname</code> and <code>{vlan_count}</code> with its
+value, converting numbers to text automatically. f-strings are how you will build
+almost every message and report in this course.</p>
+<h2 id="code-walkthrough-a-device-summary">Code walkthrough: a device summary<a class="headerlink" href="#code-walkthrough-a-device-summary" title="Permanent link">&para;</a></h2>
+<p>Here is a small program that pulls the chapter together. It stores the facts about
+one device and prints a tidy summary. It uses only what you have learned: variables,
+the four value types, and f-strings. This is <code>scripts/chapter02/device_banner.py</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;core-sw-01&quot;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">mgmt_ip</span> <span class="o">=</span> <span class="s2">&quot;10.0.0.1&quot;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">vlan_count</span> <span class="o">=</span> <span class="mi">12</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">uplink_gbps</span> <span class="o">=</span> <span class="mf">10.0</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">is_reachable</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Device summary&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==============&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hostname     : </span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Management IP: </span><span class="si">{</span><span class="n">mgmt_ip</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;VLAN count   : </span><span class="si">{</span><span class="n">vlan_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Uplink speed : </span><span class="si">{</span><span class="n">uplink_gbps</span><span class="si">}</span><span class="s2"> Gbps&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reachable    : </span><span class="si">{</span><span class="n">is_reachable</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Why is it written this way? Each fact gets its own well named variable, so the
+program reads like a description of the device. The address is stored as text,
+because an IP address is not something you do math on, it is a label. The VLAN count
+is an integer and the uplink speed is a float, because those are numbers. The
+reachable flag is a boolean, because it answers a yes or no question. The printing
+uses f-strings so each value drops neatly into a labeled line. If you had ten devices
+you would not copy this ten times, you would use a loop, which is Chapter 4. One
+device at a time is the right size for now.</p>
+<p>Run it and you get:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Device summary
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>==============
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Hostname     : core-sw-01
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>Management IP: 10.0.0.1
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>VLAN count   : 12
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>Uplink speed : 10.0 Gbps
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>Reachable    : True
+</code></pre></div>
+<h2 id="lab">Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h2>
+<p><strong>Lab 2.1: Build a Device Banner</strong> is provided as a worksheet at
+<code>labs/chapter02/lab02_device_banner.md</code>.</p>
+<p><strong>Objective.</strong> Write your first useful script from scratch, using variables, value
+types, and f-strings to print a clean summary for one device.</p>
+<p><strong>Network scenario.</strong> You want a quick, repeatable way to print a labeled summary of
+a device's key facts, the kind of thing you would later generate for every device in
+your network.</p>
+<p><strong>Topology.</strong> None. Everything runs on your computer.</p>
+<p><strong>Prerequisites.</strong> Chapter 0 finished, so Python and your virtual environment are
+ready.</p>
+<p><strong>Files required.</strong> None to start. You create <code>device_banner.py</code>.</p>
+<p><strong>Steps.</strong></p>
+<ol>
+<li>In your project, create a file <code>scripts/chapter02/device_banner.py</code>.</li>
+<li>Create five variables for a device: <code>hostname</code> and <code>mgmt_ip</code> as text, <code>vlan_count</code>
+   as an integer, <code>uplink_gbps</code> as a float, and <code>is_reachable</code> as a boolean.</li>
+<li>Print a two line header.</li>
+<li>Print each fact on its own line using an f-string, with aligned labels.</li>
+<li>Save and run it with <code>python scripts/chapter02/device_banner.py</code>.</li>
+</ol>
+<p><strong>Complete script.</strong> See the walkthrough above, which is the full solution.</p>
+<p><strong>Expected output.</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Device summary
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>==============
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Hostname     : core-sw-01
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>Management IP: 10.0.0.1
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>VLAN count   : 12
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>Uplink speed : 10.0 Gbps
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>Reachable    : True
+</code></pre></div>
+<p><strong>Verification.</strong> Your output matches, and each value sits after its label. If a
+number came out with quotes around it, you stored it as text by mistake.</p>
+<p><strong>Common errors.</strong></p>
+<ul>
+<li><code>NameError: name 'hostname' is not defined</code>. You used a variable before creating
+  it, or misspelled the name. Names must match exactly.</li>
+<li>The IP address shows as a number error. Keep the address in quotes. It is text.</li>
+<li>You forgot the <code>f</code> before the quotes, so the line printed <code>{hostname}</code> literally
+  instead of the value. Add the <code>f</code>.</li>
+</ul>
+<p><strong>Student exercise.</strong> Copy your script to make a banner for a second, different
+device (a different hostname, address, VLAN count, speed, and a <code>False</code> reachable
+flag). The solution is in <code>solutions/chapter02/device_banner_edge_solution.py</code>.</p>
+<p><strong>Challenge lab.</strong> Imagine the access and uplink port counts arrive as text, for
+example <code>"24"</code> and <code>"2"</code>. Write a short script that converts both to integers, adds
+them, and prints the total number of ports. Then, in a comment, explain what <code>"24" +
+"2"</code> would print instead and why. The solution is in
+<code>solutions/chapter02/challenge_port_count_solution.py</code>.</p>
+<blockquote>
+<p><strong>Troubleshooting tip:</strong> If your total came out as <code>242</code>, you added the values as
+text. Convert each with <code>int()</code> before adding.</p>
+</blockquote>
+<h2 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<p><code>print</code> shows text on the screen. A <code>#</code> starts a comment, a note Python ignores. A
+variable stores a value under a name you choose, using a single <code>=</code>. The four
+everyday types are strings (text in quotes), integers (whole numbers), floats
+(decimals), and booleans (<code>True</code> or <code>False</code>). Text and numbers are not the same, so
+<code>"24" + "2"</code> is <code>"242"</code>, not <code>26</code>. Use <code>int()</code>, <code>float()</code>, and <code>str()</code> to convert,
+and remember that <code>input</code> always gives you text. f-strings are the clean way to put
+values into text. Everything in this chapter is small, and everything later is built
+from it.</p>
+<h2 id="review-questions">Review questions<a class="headerlink" href="#review-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>What is the difference between <code>print</code> and a comment?</li>
+<li>Write the line that stores the text <code>Loopback0</code> in a variable called <code>interface</code>.</li>
+<li>What are the four everyday value types, and how do you recognize each one?</li>
+<li>What does <code>"22" + "1"</code> produce, and what does <code>int("22") + 1</code> produce? Why are they different?</li>
+<li>Why does <code>input</code> always return text, and what do you do about it when you need a number?</li>
+<li>Rewrite <code>"Device " + hostname + " has " + str(vlan_count) + " vlans"</code> as an f-string.</li>
+<li>What error do you get if you use a variable you never created, and what usually causes it?</li>
+<li>Is <code>"10.0.0.1"</code> a string or a number in Python, and why does that make sense?</li>
+</ol>
+<h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>A value read from a CSV file is <code>"65001"</code> and you need to use it as an AS number in a comparison. What do you do first?</li>
+<li>Explain the difference between an integer, a float, and a string, with a network example of each.</li>
+<li>Why might storing an IP address as a string be the right choice rather than a number?</li>
+<li>What is an f-string, and why is it preferred over joining text with plus signs?</li>
+</ol>
+<blockquote>
+<p><strong>Interview tip:</strong> The text versus number distinction sounds trivial, but it is
+behind a large share of real automation bugs. Showing that you always think about
+what type a value is, especially data that came from a file or a device, signals
+care.</p>
+</blockquote>
+<h2 id="repository-files-for-this-chapter">Repository files for this chapter<a class="headerlink" href="#repository-files-for-this-chapter" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>docs/chapters/chapter02_first_programs.md</code> (this chapter)</li>
+<li><code>docs/diagrams/ch02_variables_boxes.svg</code> (Figure 2.1)</li>
+<li><code>docs/diagrams/ch02_value_types.svg</code> (Figure 2.2)</li>
+<li><code>scripts/chapter02/hello.py</code> (first program)</li>
+<li><code>scripts/chapter02/device_banner.py</code> (device summary)</li>
+<li><code>labs/chapter02/lab02_device_banner.md</code> (lab worksheet)</li>
+<li><code>solutions/chapter02/device_banner_edge_solution.py</code> (exercise solution)</li>
+<li><code>solutions/chapter02/challenge_port_count_solution.py</code> (challenge solution)</li>
+</ul>
+<h2 id="what-is-next">What is next<a class="headerlink" href="#what-is-next" title="Permanent link">&para;</a></h2>
+<p>Chapter 3 answers the question you may already be asking: what if I have not one
+device but fifty? That is where data structures come in. You will learn what a data
+structure is in plain terms, then meet the list and the dictionary, which let you
+hold many values and many labeled facts together. Those two are the backbone of
+every real network script.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2026 sabyasachikar
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
