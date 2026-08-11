@@ -1,0 +1,12 @@
+# Minimal project metadata for the course repository.
+# Packaging is covered properly in Part 12 (From Script to Production). For now
+# this just marks the repo as a Python project and pins the language version.
+
+[project]
+name = "python-for-network-engineers"
+version = "0.1.0"
+description = "Hands-on course: Python for Network Engineers"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

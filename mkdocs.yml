@@ -1,0 +1,61 @@
+site_name: Python for Network Engineers
+site_description: From Python Fundamentals to Real-World Network Automation
+site_author: sabyasachikar
+site_url: https://sabyasachikar.github.io/Python_for_NetworkEngineer/
+copyright: Copyright (c) 2026 sabyasachikar
+
+repo_url: https://github.com/sabyasachikar/Python_for_NetworkEngineer
+repo_name: sabyasachikar/Python_for_NetworkEngineer
+
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Part 1 - Python Foundations:
+      - "Chapter 0: Prerequisites and Setup": chapters/chapter00_prerequisites.md
+      - "Chapter 1: Why Python for Network Engineers": chapters/chapter01_why_python.md
+      - "Chapter 2: Your First Python Programs": chapters/chapter02_first_programs.md

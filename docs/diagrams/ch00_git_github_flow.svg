@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="520" viewBox="0 0 1060 520" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="g0" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e8b7f"/>
+    </marker>
+    <marker id="b0" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e75b6"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1060" height="520" fill="#ffffff"/>
+  <text x="530" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#1f3b57">How Git and GitHub Fit Together</text>
+  <text x="530" y="64" text-anchor="middle" font-size="14" fill="#6b7280">Three local stages on your machine, then one push to the cloud</text>
+
+  <!-- boxes -->
+  <rect x="40" y="150" width="200" height="90" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="140" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3b57">Working directory</text>
+  <text x="140" y="210" text-anchor="middle" font-size="12" fill="#5b6b7b">your actual files,</text>
+  <text x="140" y="226" text-anchor="middle" font-size="12" fill="#5b6b7b">as you edit them</text>
+
+  <rect x="300" y="150" width="200" height="90" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="400" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3b57">Staging area</text>
+  <text x="400" y="210" text-anchor="middle" font-size="12" fill="#5b6b7b">changes you picked</text>
+  <text x="400" y="226" text-anchor="middle" font-size="12" fill="#5b6b7b">for the next save</text>
+
+  <rect x="560" y="150" width="200" height="90" rx="8" fill="#e9f5f2" stroke="#a9d3ca"/>
+  <text x="660" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1f6b5f">Local repository</text>
+  <text x="660" y="210" text-anchor="middle" font-size="12" fill="#3f7d72">saved history on</text>
+  <text x="660" y="226" text-anchor="middle" font-size="12" fill="#3f7d72">your machine</text>
+
+  <rect x="820" y="150" width="200" height="90" rx="8" fill="#1f3b57"/>
+  <text x="920" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">GitHub</text>
+  <text x="920" y="210" text-anchor="middle" font-size="12" fill="#cbd6e2">remote copy in</text>
+  <text x="920" y="226" text-anchor="middle" font-size="12" fill="#cbd6e2">the cloud</text>
+
+  <!-- forward arrows -->
+  <line x1="240" y1="180" x2="298" y2="180" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#g0)"/>
+  <text x="269" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#1f6b5f">git add</text>
+
+  <line x1="500" y1="180" x2="558" y2="180" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#g0)"/>
+  <text x="529" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#1f6b5f">git commit</text>
+
+  <line x1="760" y1="180" x2="818" y2="180" stroke="#2e8b7f" stroke-width="2.5" marker-end="url(#g0)"/>
+  <text x="789" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#1f6b5f">git push</text>
+
+  <!-- return arrow -->
+  <path d="M 920 240 C 920 320 140 320 140 244" fill="none" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#b0)"/>
+  <text x="530" y="312" text-anchor="middle" font-size="12" font-weight="600" fill="#2e75b6">git pull  or  git clone  (bring the cloud copy back down)</text>
+
+  <rect x="40" y="360" width="980" height="110" rx="8" fill="#f4f7fb" stroke="#dbe3ee"/>
+  <text x="60" y="388" font-size="14" font-weight="700" fill="#1f3b57">Why this matters for a network engineer</text>
+  <text x="60" y="414" font-size="13" fill="#42506a">Every change to a script or a config template is saved with a message and a timestamp, so you can see what changed, when,</text>
+  <text x="60" y="434" font-size="13" fill="#42506a">and why, and roll back if a change breaks something. GitHub gives you an off-machine backup and a way to share your tools</text>
+  <text x="60" y="454" font-size="13" fill="#42506a">with teammates. This is the same discipline you already want for device configs, applied to your automation code.</text>
+</svg>

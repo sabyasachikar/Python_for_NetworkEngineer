@@ -1,0 +1,3 @@
+# Tools for building the online book (separate from the course's own packages).
+# Install with: pip install -r requirements-docs.txt
+mkdocs-material>=9.5

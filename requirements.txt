@@ -1,0 +1,6 @@
+# Python for Network Engineers - course dependencies
+# This file grows as the course progresses. A package is added only in the
+# chapter that first uses it, so you always know why it is here.
+
+# Chapter 2 onward: interactive shell used for the read-along style in this course
+ipython>=8.0

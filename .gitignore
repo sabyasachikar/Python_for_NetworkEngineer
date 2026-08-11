@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Secrets and local settings (never commit these)
+.env
+*.env
+secrets.yaml
+secrets.yml
+
+# Course outputs that are generated, not source
+outputs/*
+configs/backups/*
+!outputs/.gitkeep
+!configs/backups/.gitkeep
+
+# Editor and OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
