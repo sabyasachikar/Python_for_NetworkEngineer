@@ -1,0 +1,1432 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From Python Fundamentals to Real-World Network Automation">
+      
+      
+        <meta name="author" content="sabyasachikar">
+      
+      
+        <link rel="canonical" href="https://sabyasachikar.github.io/Python_for_NetworkEngineer/chapters/chapter00_prerequisites/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../chapter01_why_python/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Chapter 0: Prerequisites and Setup - Python for Network Engineers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-0-prerequisites-and-environment-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python for Network Engineers" class="md-header__button md-logo" aria-label="Python for Network Engineers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python for Network Engineers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 0: Prerequisites and Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sabyasachikar/Python_for_NetworkEngineer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sabyasachikar/Python_for_NetworkEngineer
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python for Network Engineers" class="md-nav__button md-logo" aria-label="Python for Network Engineers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python for Network Engineers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sabyasachikar/Python_for_NetworkEngineer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sabyasachikar/Python_for_NetworkEngineer
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Python Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Python Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 0: Prerequisites and Setup
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 0: Prerequisites and Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters-to-a-network-engineer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters to a network engineer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual explanation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup walkthrough
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup walkthrough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-a-install-python-314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part A: Install Python 3.14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-b-confirm-pip-and-upgrade-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part B: Confirm pip and upgrade it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-c-create-and-activate-a-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part C: Create and activate a virtual environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-d-install-vs-code-and-ipython-and-try-ipython" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part D: Install VS Code and IPython, and try IPython
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-e-create-a-github-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part E: Create a GitHub account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-f-install-and-configure-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part F: Install and configure Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-g-create-the-repository-first-commit-and-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part G: Create the repository, first commit, and push
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code walkthrough
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-files-for-this-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository files for this chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01_why_python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Why Python for Network Engineers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02_first_programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Your First Python Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters-to-a-network-engineer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters to a network engineer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual explanation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup walkthrough
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup walkthrough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-a-install-python-314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part A: Install Python 3.14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-b-confirm-pip-and-upgrade-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part B: Confirm pip and upgrade it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-c-create-and-activate-a-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part C: Create and activate a virtual environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-d-install-vs-code-and-ipython-and-try-ipython" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part D: Install VS Code and IPython, and try IPython
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-e-create-a-github-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part E: Create a GitHub account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-f-install-and-configure-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part F: Install and configure Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-g-create-the-repository-first-commit-and-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part G: Create the repository, first commit, and push
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code walkthrough
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-files-for-this-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository files for this chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-0-prerequisites-and-environment-setup">Chapter 0: Prerequisites and Environment Setup<a class="headerlink" href="#chapter-0-prerequisites-and-environment-setup" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Part 1: Python Foundations for Network Engineers</strong>
+This is the one chapter you do before any coding. By the end your computer
+has Python, an editor, and Git installed, you have a GitHub account, and your
+course project folder is created and saved to GitHub. Everything after this
+runs inside the environment you build here.</p>
+</blockquote>
+<h2 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<p>After this chapter you will be able to:</p>
+<ul>
+<li>Install the latest Python (3.14) and confirm it works on Windows, macOS, or Linux.</li>
+<li>Explain what pip and a virtual environment are, and why every project should have its own.</li>
+<li>Create and activate a virtual environment, and install packages into it.</li>
+<li>Set up VS Code and IPython, and run code interactively line by line.</li>
+<li>Create a GitHub account and install and configure Git.</li>
+<li>Turn your project folder into a Git repository, make your first commit, and push it to GitHub.</li>
+</ul>
+<h2 id="why-this-matters-to-a-network-engineer">Why this matters to a network engineer<a class="headerlink" href="#why-this-matters-to-a-network-engineer" title="Permanent link">&para;</a></h2>
+<p>You already treat device configuration with care. You keep backups, you note what
+changed, and you can roll back when a change goes wrong. Your automation code
+deserves the same discipline, because a script that pushes config to fifty devices
+is more dangerous than any single device change.</p>
+<p>A clean environment gives you three things. First, your tools are isolated, so a
+package you install for one project cannot quietly break another. Second, your work
+is version controlled, so every change to a script or a template is saved with a
+message and a timestamp and can be undone. Third, your work lives on GitHub, so it
+survives a laptop failure and can be shared with your team. Setting this up once,
+properly, saves you from a long list of confusing problems later.</p>
+<h2 id="concept">Concept<a class="headerlink" href="#concept" title="Permanent link">&para;</a></h2>
+<p>A working Python environment is a few separate pieces that work together.</p>
+<p>The interpreter is the <code>python</code> program itself. It reads your code and runs it. We
+install the latest version, 3.14, so you get the current syntax and the newest
+libraries.</p>
+<p>pip is Python's package installer. Most useful network libraries, like netmiko and
+napalm, are not built into Python. pip downloads and installs them for you from the
+Python Package Index.</p>
+<p>A virtual environment is a private copy of Python and its packages for one project.
+Without it, everything you install goes into one shared pile, and two projects that
+need different versions of the same library will fight. With it, each project gets
+its own clean box. You will create one virtual environment for this course.</p>
+<p>An editor is where you write code. We use VS Code, which is free, works the same on
+all three operating systems, and has good Python support. IPython is an improved
+interactive Python shell that lets you type one line, see the result, and type the
+next. That is the read-along style this book uses.</p>
+<p>Git is a version control tool that runs on your machine and records the history of
+your files. GitHub is a website that stores a copy of your Git history in the cloud.
+Git is the tool, GitHub is the place. You need both.</p>
+<h2 id="network-example">Network example<a class="headerlink" href="#network-example" title="Permanent link">&para;</a></h2>
+<p>Think about a Jinja2 template that generates interface configuration. Over a few
+weeks you tweak it many times. Without version control, you end up with files named
+<code>template_final</code>, <code>template_final_v2</code>, and <code>template_really_final</code>, and no idea
+which one is correct. With Git, there is one file, and its full history is saved.
+You can see exactly what changed between last Tuesday and today, and if a change
+broke your generated config, you can roll back in seconds. That is the everyday
+value of the setup in this chapter.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>When you run <code>python script.py</code>, your operating system finds the Python
+interpreter, which reads the file and executes it. When you activate a virtual
+environment first, your shell is told to use that environment's private Python and
+packages instead of the system-wide ones. When you run a Git command, Git updates a
+hidden <code>.git</code> folder inside your project that holds the complete history. When you
+run <code>git push</code>, Git sends the new history to GitHub over the network.</p>
+<h2 id="visual-explanation">Visual explanation<a class="headerlink" href="#visual-explanation" title="Permanent link">&para;</a></h2>
+<p><img alt="Figure 0.1: Your environment, set up once" src="../../diagrams/ch00_setup_pipeline.svg" /></p>
+<p><em>Figure 0.1: The pieces you install in this chapter and how they connect. The blue
+steps are your local tools. The green steps put your work under version control.</em></p>
+<p><img alt="Figure 0.2: How Git and GitHub fit together" src="../../diagrams/ch00_git_github_flow.svg" /></p>
+<p><em>Figure 0.2: Git has three local stages, working directory, staging area, and local
+repository, moved along with add and commit. Push sends the saved history up to
+GitHub, and pull or clone brings it back down.</em></p>
+<h2 id="setup-walkthrough">Setup walkthrough<a class="headerlink" href="#setup-walkthrough" title="Permanent link">&para;</a></h2>
+<p>Follow the section for your operating system. Commands you type are shown in code
+blocks. Lines that start with <code>#</code> are comments for you to read, not to type.</p>
+<h3 id="part-a-install-python-314">Part A: Install Python 3.14<a class="headerlink" href="#part-a-install-python-314" title="Permanent link">&para;</a></h3>
+<p><strong>Windows.</strong> Go to python.org, open Downloads, and get the latest Python 3.14
+Windows installer (64 bit). Run it. On the very first screen, tick the box that says
+"Add python.exe to PATH" before you click Install. This one checkbox prevents the
+most common Windows problem, where the <code>python</code> command is not found later. Finish
+the install, then open a new PowerShell window and check the version:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">python</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div>
+<p>You should see <code>Python 3.14.x</code>. Windows also installs a launcher called <code>py</code>, so
+<code>py --version</code> works too.</p>
+<p><strong>macOS.</strong> The Python that ships with macOS is old and meant for the system, not for
+your work. Install a fresh one. The simplest way is the python.org macOS installer:
+download the latest 3.14 universal installer and run it. Then open Terminal and
+check:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>--version
+</code></pre></div>
+<p>If you use Homebrew, <code>brew install python@3.14</code> also works. On macOS the command is
+<code>python3</code>, not <code>python</code>.</p>
+<p><strong>Linux (Debian or Ubuntu).</strong> Use the package manager. On recent releases:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3<span class="w"> </span>python3-venv<span class="w"> </span>python3-pip
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>python3<span class="w"> </span>--version
+</code></pre></div>
+<p>If your distribution does not yet package 3.14, the deadsnakes PPA or pyenv can
+install it, but any 3.11 or newer will work for the whole course. On Linux the
+command is <code>python3</code>.</p>
+<blockquote>
+<p><strong>Important note:</strong> From here on, where this book writes <code>python</code>, use <code>python</code>
+on Windows and <code>python3</code> on macOS and Linux. The same applies to <code>pip</code> versus
+<code>pip3</code>. Once your virtual environment is active, <code>python</code> and <code>pip</code> work
+everywhere, which is one more reason to always work inside it.</p>
+</blockquote>
+<h3 id="part-b-confirm-pip-and-upgrade-it">Part B: Confirm pip and upgrade it<a class="headerlink" href="#part-b-confirm-pip-and-upgrade-it" title="Permanent link">&para;</a></h3>
+<p>pip comes with Python. Confirm it and upgrade it to the latest version:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</code></pre></div>
+<p>Using <code>python -m pip</code> rather than a bare <code>pip</code> guarantees you are upgrading the pip
+that belongs to the Python you just installed, which avoids another common mix-up.</p>
+<h3 id="part-c-create-and-activate-a-virtual-environment">Part C: Create and activate a virtual environment<a class="headerlink" href="#part-c-create-and-activate-a-virtual-environment" title="Permanent link">&para;</a></h3>
+<p>Make the course folder and a virtual environment inside it. Pick a place you can
+find easily, such as your home folder.</p>
+<p><strong>Windows (PowerShell):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd </span><span class="nv">$HOME</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">mkdir</span> <span class="n">python-for-network-engineers</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">cd </span><span class="n">python-for-network-engineers</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>If activation is blocked with a message about scripts being disabled, run this once,
+then activate again:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
+</code></pre></div>
+<p><strong>macOS and Linux (Terminal):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>~
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mkdir<span class="w"> </span>python-for-network-engineers
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">cd</span><span class="w"> </span>python-for-network-engineers
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</code></pre></div>
+<p>When it is active, your prompt shows <code>(.venv)</code> at the start of the line. That is how
+you know you are working inside the environment. To leave it later, type
+<code>deactivate</code>. You do not delete it, you just turn it off, and you activate it again
+next time you work on the course.</p>
+<blockquote>
+<p><strong>Best practice:</strong> Activate the virtual environment every time you sit down to
+work. If you install a package and later cannot import it, the first thing to
+check is whether <code>(.venv)</code> is showing in your prompt.</p>
+</blockquote>
+<h3 id="part-d-install-vs-code-and-ipython-and-try-ipython">Part D: Install VS Code and IPython, and try IPython<a class="headerlink" href="#part-d-install-vs-code-and-ipython-and-try-ipython" title="Permanent link">&para;</a></h3>
+<p>Download VS Code from code.visualstudio.com and install it for your operating
+system. Open it, go to the Extensions view, and install the "Python" extension from
+Microsoft. VS Code has a built-in terminal (View menu, then Terminal) where you can
+run all the commands in this book.</p>
+<p>Now install IPython into your active environment and start it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>ipython
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>ipython
+</code></pre></div>
+<p>You are now in an interactive shell. Type one line at a time and see each result
+immediately. This is the read-along style used throughout the book:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>In [1]: hostname = &quot;core-sw-01&quot;
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>In [2]: vlans = [10, 20, 30]
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>In [3]: len(vlans)
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Out[3]: 3
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>In [4]: f&quot;{hostname} carries {len(vlans)} VLANs&quot;
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Out[4]: &#39;core-sw-01 carries 3 VLANs&#39;
+</code></pre></div>
+<p>Type <code>exit</code> to leave IPython. You will use it constantly to try small pieces of code
+before putting them into a script.</p>
+<h3 id="part-e-create-a-github-account">Part E: Create a GitHub account<a class="headerlink" href="#part-e-create-a-github-account" title="Permanent link">&para;</a></h3>
+<p>Open github.com in your browser and click Sign up. Use an email you will keep, pick a
+username (a clean, professional handle is worth it, since colleagues and employers
+see it), and set a strong password. Verify your email when GitHub sends the
+confirmation.</p>
+<p>Then turn on two-factor authentication. In your account settings, under Password and
+authentication, enable two-factor authentication using an authenticator app. This
+protects the account that will hold your code, and GitHub increasingly requires it
+anyway.</p>
+<blockquote>
+<p><strong>Warning:</strong> GitHub no longer lets you push code using your account password. When
+Git asks for a credential later, you use a personal access token or an SSH key, not
+your password. We set this up in Part G. This trips up almost everyone the first
+time, so expect it.</p>
+</blockquote>
+<h3 id="part-f-install-and-configure-git">Part F: Install and configure Git<a class="headerlink" href="#part-f-install-and-configure-git" title="Permanent link">&para;</a></h3>
+<p><strong>Windows.</strong> Download Git for Windows from git-scm.com and run the installer. The
+default options are fine. This also gives you Git Bash, an alternative terminal, but
+you can keep using PowerShell.</p>
+<p><strong>macOS.</strong> Installing the Xcode command line tools gives you Git:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>xcode-select<span class="w"> </span>--install
+</code></pre></div>
+<p>Or <code>brew install git</code> if you use Homebrew.</p>
+<p><strong>Linux (Debian or Ubuntu):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+</code></pre></div>
+<p>Now tell Git who you are. This name and email are stamped on every commit you make:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git<span class="w"> </span>--version
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
+</code></pre></div>
+<p>Use the same email you used for GitHub, so your commits are linked to your account.</p>
+<h3 id="part-g-create-the-repository-first-commit-and-push">Part G: Create the repository, first commit, and push<a class="headerlink" href="#part-g-create-the-repository-first-commit-and-push" title="Permanent link">&para;</a></h3>
+<p>You already have the <code>python-for-network-engineers</code> folder from Part C. Turn it into
+a Git repository and make your first save. Make sure your virtual environment is
+active and you are inside the folder.</p>
+<p>First, create two small files. A <code>requirements.txt</code> lists the packages the course
+uses, and a <code>.gitignore</code> tells Git which files to leave out of version control (you
+never commit the virtual environment or secrets).</p>
+<p>Create <code>requirements.txt</code> with this line:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ipython
+</code></pre></div>
+<p>Create <code>.gitignore</code> with these lines:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>.venv/
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>__pycache__/
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>.env
+</code></pre></div>
+<p>Now initialize Git, stage everything, and commit:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>init
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit: course project setup&quot;</span>
+</code></pre></div>
+<p>Create the matching empty repository on GitHub. In the browser, click New
+repository, name it <code>python-for-network-engineers</code>, leave it empty (do not add a
+README from the website, since you already have local files), and create it. GitHub
+then shows you the repository URL. Connect your local repository to it and push:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/YOUR-USERNAME/python-for-network-engineers.git
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+<p>The first push asks you to authenticate. In the browser sign-in flow, or when asked
+for a password in the terminal, use a personal access token, not your account
+password. You create a token in GitHub under Settings, Developer settings, Personal
+access tokens. Give it the <code>repo</code> scope, copy it, and paste it when Git asks for a
+password. Git remembers it after the first time.</p>
+<p>Refresh your GitHub repository page. Your files are there. That is the full loop:
+write locally, commit, push to GitHub.</p>
+<h2 id="code-walkthrough">Code walkthrough<a class="headerlink" href="#code-walkthrough" title="Permanent link">&para;</a></h2>
+<p>A few of these commands are worth understanding rather than just typing.</p>
+<p><code>python -m venv .venv</code> creates a folder named <code>.venv</code> that contains a private Python
+and a private place for packages. Nothing outside this folder is touched, which is
+exactly why isolation is safe.</p>
+<p>Activating the environment does not change your files. It only changes which Python
+your shell uses, for this window, until you deactivate or close it. That is why the
+prompt marker matters, it is the only visible sign of which Python is active.</p>
+<p><code>git add .</code> moves your current changes into the staging area, and <code>git commit</code>
+records the staged changes as a permanent point in history with a message. The two
+steps are separate on purpose, so you can choose exactly what goes into each save.
+<code>git push</code> copies your local history up to GitHub. Look back at Figure 0.2 and match
+each command to an arrow.</p>
+<h2 id="lab">Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h2>
+<p><strong>Lab 0.1: From Zero to First Commit</strong> is provided as a worksheet at
+<code>labs/chapter00/lab00_zero_to_first_commit.md</code>.</p>
+<p><strong>Objective.</strong> Stand up a complete working environment and prove it end to end, from
+a fresh install to code pushed on GitHub.</p>
+<p><strong>Network scenario.</strong> You are joining a team that keeps all of its automation in
+GitHub. Before you can contribute a single script, your machine has to be set up and
+your first commit has to land in a repository.</p>
+<p><strong>Topology.</strong> None. This is all on your computer plus your GitHub account.</p>
+<p><strong>Prerequisites.</strong> A computer running Windows, macOS, or Linux, with administrator
+rights to install software, and internet access.</p>
+<p><strong>Files required.</strong> None to start. You create <code>requirements.txt</code>, <code>.gitignore</code>, and
+run <code>check_setup.py</code>.</p>
+<p><strong>Steps.</strong></p>
+<ol>
+<li>Install Python 3.14 for your operating system and confirm <code>python --version</code>.</li>
+<li>Upgrade pip with <code>python -m pip install --upgrade pip</code>.</li>
+<li>Create the <code>python-for-network-engineers</code> folder and a <code>.venv</code> virtual environment, then activate it.</li>
+<li>Install IPython and run the interactive session shown in Part D.</li>
+<li>Install VS Code and the Python extension.</li>
+<li>Create a GitHub account and enable two-factor authentication.</li>
+<li>Install Git and set your <code>user.name</code> and <code>user.email</code>.</li>
+<li>Add <code>requirements.txt</code> and <code>.gitignore</code>, then run <code>git init</code>, <code>git add .</code>, and <code>git commit</code>.</li>
+<li>Create the empty GitHub repository, add it as <code>origin</code>, and <code>git push</code>.</li>
+<li>Copy <code>check_setup.py</code> into your <code>scripts/chapter00/</code> folder and run it.</li>
+</ol>
+<p><strong>Expected output.</strong> Running the setup check prints something like this (the path and
+release differ per machine):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Python version : 3.14.0
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Operating system: Windows 11
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Interpreter path: C:\Users\you\python-for-network-engineers\.venv\Scripts\python.exe
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Result: your Python is new enough for this course.
+</code></pre></div>
+<p>And your GitHub repository page shows <code>requirements.txt</code>, <code>.gitignore</code>, and your
+first commit message.</p>
+<p><strong>Verification.</strong> You are done when three things are true: your prompt shows
+<code>(.venv)</code> when the environment is active, <code>check_setup.py</code> reports your Python is new
+enough, and your files appear on GitHub.</p>
+<p><strong>Common errors.</strong></p>
+<ul>
+<li><code>python is not recognized</code> on Windows. You skipped the "Add python.exe to PATH"
+  checkbox. Re-run the installer, choose Modify, and enable it, or reinstall.</li>
+<li>Activation blocked on Windows. Run <code>Set-ExecutionPolicy -Scope CurrentUser
+  -ExecutionPolicy RemoteSigned</code>, then activate again.</li>
+<li><code>python: command not found</code> on macOS or Linux. Use <code>python3</code> and <code>pip3</code> until the
+  environment is active.</li>
+<li>Push rejected or asks for a password that never works. You are using your account
+  password. Create a personal access token with the <code>repo</code> scope and use that
+  instead.</li>
+<li>You committed the <code>.venv</code> folder by mistake. Add <code>.venv/</code> to <code>.gitignore</code>, then run
+  <code>git rm -r --cached .venv</code> and commit again.</li>
+</ul>
+<p><strong>Student exercise.</strong> See <code>labs/chapter00/exercise_second_commit.md</code>. You make a
+small change and record a second commit, to prove you can repeat the save loop on
+your own. The solution is in <code>solutions/chapter00/exercise_second_commit_solution.md</code>.</p>
+<p><strong>Challenge lab.</strong> See <code>labs/chapter00/challenge_branch_and_readme.md</code>. You create a
+branch, add a README on it, and push the branch to GitHub. The solution is in
+<code>solutions/chapter00/challenge_branch_and_readme_solution.md</code>.</p>
+<blockquote>
+<p><strong>Troubleshooting tip:</strong> If <code>git push</code> hangs or fails, first run <code>git remote -v</code>
+and confirm the <code>origin</code> URL is correct and points at your own username. A typo in
+the remote URL is the usual cause.</p>
+</blockquote>
+<h2 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<p>Install the latest Python and always work inside a per-project virtual environment,
+so installs never collide and your prompt shows <code>(.venv)</code> when you are set. pip
+installs the libraries the course needs, tracked in <code>requirements.txt</code>. VS Code is
+where you write code and IPython is where you try it line by line. Git records the
+history of your files locally, and GitHub keeps a copy in the cloud that you can
+restore and share. The save loop is add, commit, push, and you will run it for the
+rest of the course. GitHub authentication uses a token or an SSH key, never your
+password.</p>
+<h2 id="review-questions">Review questions<a class="headerlink" href="#review-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>What problem does a virtual environment solve, and how can you tell one is active?</li>
+<li>What is the difference between Git and GitHub?</li>
+<li>Why do you run <code>python -m pip</code> instead of just <code>pip</code>?</li>
+<li>What is the purpose of <code>.gitignore</code>, and name two things that belong in it.</li>
+<li>On Windows, which single installer choice prevents the "python is not recognized" error?</li>
+<li>Put these in order and say what each does: <code>git push</code>, <code>git commit</code>, <code>git add</code>.</li>
+<li>Why should the virtual environment folder never be committed to Git?</li>
+<li>When Git asks for a password to push to GitHub, what should you actually provide?</li>
+</ol>
+<h2 id="interview-questions">Interview questions<a class="headerlink" href="#interview-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Walk me through how you set up a clean Python environment for a new automation project.</li>
+<li>Why is version control important for network automation specifically, not just software development?</li>
+<li>A teammate says their script works on their laptop but fails on yours. What environment issues would you check first?</li>
+<li>What is a virtual environment, and what goes wrong without one?</li>
+<li>How do you keep secrets like device passwords out of a Git repository?</li>
+</ol>
+<blockquote>
+<p><strong>Interview tip:</strong> Mentioning virtual environments, a pinned <code>requirements.txt</code>,
+and keeping secrets out of Git signals that you think about repeatability and
+safety, which is what separates a hobby script from a tool a team can rely on.</p>
+</blockquote>
+<h2 id="repository-files-for-this-chapter">Repository files for this chapter<a class="headerlink" href="#repository-files-for-this-chapter" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>docs/chapters/chapter00_prerequisites.md</code> (this chapter)</li>
+<li><code>docs/diagrams/ch00_setup_pipeline.svg</code> (Figure 0.1)</li>
+<li><code>docs/diagrams/ch00_git_github_flow.svg</code> (Figure 0.2)</li>
+<li><code>scripts/chapter00/check_setup.py</code> (environment check)</li>
+<li><code>labs/chapter00/lab00_zero_to_first_commit.md</code> (lab worksheet)</li>
+<li><code>labs/chapter00/exercise_second_commit.md</code> (student exercise)</li>
+<li><code>labs/chapter00/challenge_branch_and_readme.md</code> (challenge lab)</li>
+<li><code>solutions/chapter00/exercise_second_commit_solution.md</code></li>
+<li><code>solutions/chapter00/challenge_branch_and_readme_solution.md</code></li>
+</ul>
+<h2 id="what-is-next">What is next<a class="headerlink" href="#what-is-next" title="Permanent link">&para;</a></h2>
+<p>Chapter 1 explains why Python is worth learning for network work and shows the
+payoff before you write any code. Because your environment is now ready, you can run
+the demo in Chapter 1 straight away. Chapter 2 then starts the Python language
+itself with your first programs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2026 sabyasachikar
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

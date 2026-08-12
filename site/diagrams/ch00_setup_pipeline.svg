@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="540" viewBox="0 0 1060 540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a0" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e75b6"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1060" height="540" fill="#ffffff"/>
+  <text x="530" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#1f3b57">Your Environment, Set Up Once</text>
+  <text x="530" y="64" text-anchor="middle" font-size="14" fill="#6b7280">Do this in Chapter 0, then every later chapter runs inside it</text>
+
+  <!-- OS choice -->
+  <rect x="30" y="110" width="150" height="150" rx="8" fill="#eef2f7" stroke="#c9d4e2"/>
+  <text x="105" y="134" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3b57">Your computer</text>
+  <rect x="48" y="150" width="114" height="28" rx="5" fill="#ffffff" stroke="#c9d4e2"/>
+  <text x="105" y="169" text-anchor="middle" font-size="13" fill="#33475b">Windows</text>
+  <rect x="48" y="184" width="114" height="28" rx="5" fill="#ffffff" stroke="#c9d4e2"/>
+  <text x="105" y="203" text-anchor="middle" font-size="13" fill="#33475b">macOS</text>
+  <rect x="48" y="218" width="114" height="28" rx="5" fill="#ffffff" stroke="#c9d4e2"/>
+  <text x="105" y="237" text-anchor="middle" font-size="13" fill="#33475b">Linux</text>
+
+  <line x1="180" y1="185" x2="212" y2="185" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a0)"/>
+
+  <!-- Python -->
+  <rect x="214" y="150" width="150" height="70" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="289" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3b57">Python 3.14</text>
+  <text x="289" y="200" text-anchor="middle" font-size="12" fill="#5b6b7b">the interpreter + pip</text>
+
+  <line x1="364" y1="185" x2="396" y2="185" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a0)"/>
+
+  <!-- venv -->
+  <rect x="398" y="150" width="150" height="70" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="473" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3b57">venv</text>
+  <text x="473" y="200" text-anchor="middle" font-size="12" fill="#5b6b7b">an isolated project box</text>
+
+  <line x1="548" y1="185" x2="580" y2="185" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a0)"/>
+
+  <!-- editor -->
+  <rect x="582" y="150" width="160" height="70" rx="8" fill="#eaf1f8" stroke="#b9d2ec"/>
+  <text x="662" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3b57">VS Code + IPython</text>
+  <text x="662" y="200" text-anchor="middle" font-size="12" fill="#5b6b7b">write and try code</text>
+
+  <line x1="742" y1="185" x2="774" y2="185" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a0)"/>
+
+  <!-- git -->
+  <rect x="776" y="150" width="120" height="70" rx="8" fill="#e9f5f2" stroke="#a9d3ca"/>
+  <text x="836" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="#1f6b5f">Git</text>
+  <text x="836" y="200" text-anchor="middle" font-size="12" fill="#3f7d72">local versions</text>
+
+  <line x1="896" y1="185" x2="928" y2="185" stroke="#2e75b6" stroke-width="2.5" marker-end="url(#a0)"/>
+
+  <!-- github -->
+  <rect x="900" y="150" width="130" height="70" rx="8" fill="#1f3b57"/>
+  <text x="965" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">GitHub</text>
+  <text x="965" y="200" text-anchor="middle" font-size="12" fill="#cbd6e2">backup + share</text>
+
+  <!-- project folder callout -->
+  <rect x="214" y="300" width="816" height="90" rx="8" fill="#f4f7fb" stroke="#dbe3ee"/>
+  <text x="234" y="328" font-size="14" font-weight="700" fill="#1f3b57">One project folder holds everything</text>
+  <text x="234" y="352" font-size="13" fill="#42506a">python-for-network-engineers/ with your scripts, labs, inventory, templates, and a requirements.txt that lists the</text>
+  <text x="234" y="372" font-size="13" fill="#42506a">exact packages the course needs. Git tracks the folder. GitHub keeps a copy you can share or restore.</text>
+
+  <rect x="30" y="300" width="150" height="90" rx="8" fill="#eef2f7" stroke="#c9d4e2"/>
+  <text x="105" y="335" text-anchor="middle" font-size="13" font-weight="700" fill="#1f3b57">The result</text>
+  <text x="105" y="360" text-anchor="middle" font-size="12" fill="#42506a">a clean, repeatable</text>
+  <text x="105" y="376" text-anchor="middle" font-size="12" fill="#42506a">place to work</text>
+
+  <text x="530" y="440" text-anchor="middle" font-size="13" fill="#6b7280">Install left to right. The blue steps are your local tools. The green steps put your work under version control.</text>
+</svg>
